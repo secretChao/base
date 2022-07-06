@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>Token gateway test</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="robots" content="noindex, nofollow">
+
+	</head>
+	<body>
+	   <h1 id="status">流量已達上限</h1>
+       <sapn id="count"></sapn><sapn id="point"></sapn>
+       <p>本頁面將自動進行排隊，請耐心等候！</p>
+	</body>
+	<script type="text/javascript">
+	   const cookie = document.cookie;
+	   const count = cookie.split('; ').find(row => row.startsWith('count=')).split('=')[1];
+	   document.getElementById('count').textContent = '伺服器忙碌中，目前線上等待人數 ' + count + ' ';
+	   var pointCount = 1;
+	   setInterval(function() {
+		   if (pointCount > 3) {
+			   pointCount = 1;
+		   }
+		   console.log(pointCount);
+		   console.log('.'.repeat(pointCount));
+		   document.getElementById('point').textContent = '.'.repeat(pointCount);
+		   pointCount++;
+       }, 1000);
+	   
+	   
+	   setTimeout(function() {
+		   window.location.replace("/index");
+	   }, 10000);
+	   
+	</script>
+</html>
