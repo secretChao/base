@@ -27,13 +27,13 @@ public class BaseAPIController {
 	private static final Logger logger = LogManager.getLogger(BaseController.class);
 
 	/**
-	 * 首頁
+	 * 取得資料
 	 *
 	 * @param model
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/", method= RequestMethod.GET)
+	@RequestMapping(value = "/getData", method= RequestMethod.GET)
 	public List<Map> getData(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		List<Map> datas = new DataUtils().getData();
 		System.out.println(datas);
