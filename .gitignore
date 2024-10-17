@@ -9,3 +9,5 @@ target/
 /.apt_generated_tests/
 /doc/
 .idea/
+/Base/.settings/
+/Base/.classpath
