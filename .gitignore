@@ -11,3 +11,4 @@ target/
 .idea/
 /Base/.settings/
 /Base/.classpath
+/Base/target/
